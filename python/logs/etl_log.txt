@@ -1,0 +1,30 @@
+[2025-11-06 17:47:28] ==================================================
+[2025-11-06 17:47:28] INICIANDO LIMPIEZA DE DATOS
+[2025-11-06 17:47:28] ==================================================
+[2025-11-06 17:47:28] Cargando CSV desde: data/raw/mental_health.csv
+[2025-11-06 17:47:28] ❌ ERROR: No se encontró el archivo data/raw/mental_health.csv
+[2025-11-06 17:47:28] Verifica que el CSV esté en la carpeta data/raw/
+[2025-11-06 17:47:57] ==================================================
+[2025-11-06 17:47:57] INICIANDO LIMPIEZA DE DATOS
+[2025-11-06 17:47:57] ==================================================
+[2025-11-06 17:47:57] Cargando CSV desde: data/raw/mental_health.csv
+[2025-11-06 17:47:57] ❌ ERROR: No se encontró el archivo data/raw/mental_health.csv
+[2025-11-06 17:47:57] Verifica que el CSV esté en la carpeta data/raw/
+[2025-11-06 17:49:07] ==================================================
+[2025-11-06 17:49:07] INICIANDO LIMPIEZA DE DATOS
+[2025-11-06 17:49:07] ==================================================
+[2025-11-06 17:49:07] Cargando CSV desde: proyectoDB2/data/raw/mental_health.csv
+[2025-11-06 17:49:07] ❌ ERROR: No se encontró el archivo proyectoDB2/data/raw/mental_health.csv
+[2025-11-06 17:49:07] Verifica que el CSV esté en la carpeta data/raw/
+[2025-11-06 17:49:24] ==================================================
+[2025-11-06 17:49:24] INICIANDO LIMPIEZA DE DATOS
+[2025-11-06 17:49:24] ==================================================
+[2025-11-06 17:49:24] Cargando CSV desde: data/raw/mental_health.csv
+[2025-11-06 17:49:24] ❌ ERROR: No se encontró el archivo data/raw/mental_health.csv
+[2025-11-06 17:49:24] Verifica que el CSV esté en la carpeta data/raw/
+[2025-11-06 17:53:37] ==================================================
+[2025-11-06 17:53:37] INICIANDO LIMPIEZA DE DATOS
+[2025-11-06 17:53:37] ==================================================
+[2025-11-06 17:53:37] Cargando CSV desde: data/raw/mental_health.csv
+[2025-11-06 17:53:37] ❌ ERROR: No se encontró el archivo data/raw/mental_health.csv
+[2025-11-06 17:53:37] Verifica que el CSV esté en la carpeta data/raw/

@@ -1,0 +1,1320 @@
+[2025-11-06 17:54:43] ==================================================
+[2025-11-06 17:54:43] INICIANDO LIMPIEZA DE DATOS
+[2025-11-06 17:54:43] ==================================================
+[2025-11-06 17:54:43] Cargando CSV desde: data/raw/mental_health.csv
+[2025-11-06 17:54:43] ✅ CSV cargado exitosamente: 292364 registros, 17 columnas
+[2025-11-06 17:54:43] 
+--- ANÁLISIS DE CALIDAD DE DATOS ---
+[2025-11-06 17:54:43] 
+Valores nulos por columna:
+[2025-11-06 17:54:43]   self_employed: 5202 (1.78%)
+[2025-11-06 17:54:43] 
+Registros duplicados: 2313
+[2025-11-06 17:54:43] 
+Tipos de datos:
+[2025-11-06 17:54:43]   Timestamp: object
+[2025-11-06 17:54:43]   Gender: object
+[2025-11-06 17:54:43]   Country: object
+[2025-11-06 17:54:43]   Occupation: object
+[2025-11-06 17:54:43]   self_employed: object
+[2025-11-06 17:54:43]   family_history: object
+[2025-11-06 17:54:43]   treatment: object
+[2025-11-06 17:54:43]   Days_Indoors: object
+[2025-11-06 17:54:43]   Growing_Stress: object
+[2025-11-06 17:54:43]   Changes_Habits: object
+[2025-11-06 17:54:43]   Mental_Health_History: object
+[2025-11-06 17:54:43]   Mood_Swings: object
+[2025-11-06 17:54:43]   Coping_Struggles: object
+[2025-11-06 17:54:43]   Work_Interest: object
+[2025-11-06 17:54:43]   Social_Weakness: object
+[2025-11-06 17:54:43]   mental_health_interview: object
+[2025-11-06 17:54:43]   care_options: object
+[2025-11-06 17:54:43] 
+--- INICIANDO LIMPIEZA ---
+[2025-11-06 17:54:44] ✅ Eliminados 2313 registros duplicados
+[2025-11-06 17:54:44] Limpiando espacios en blanco...
+[2025-11-06 17:54:44] Normalizando valores categóricos...
+[2025-11-06 17:54:44] Eliminando registros con valores NULL en campos críticos...
+[2025-11-06 17:54:45] Validando valores categóricos...
+[2025-11-06 17:54:45] 
+✅ LIMPIEZA COMPLETADA:
+[2025-11-06 17:54:45]   Registros iniciales: 292364
+[2025-11-06 17:54:45]   Registros eliminados: 2313 (0.79%)
+[2025-11-06 17:54:45]   Registros finales: 290051
+[2025-11-06 17:54:45] 
+✅ CSV limpio guardado en: data/processed/mental_health_clean.csv
+[2025-11-06 17:54:45]   290051 registros, 17 columnas
+[2025-11-06 17:54:45] 
+==================================================
+[2025-11-06 17:54:45] LIMPIEZA COMPLETADA EXITOSAMENTE
+[2025-11-06 17:54:45] ==================================================
+[2025-11-08 20:14:18] ==================================================
+[2025-11-08 20:14:18] INICIANDO CARGA DE DIMENSIONES
+[2025-11-08 20:14:18] ==================================================
+[2025-11-08 20:14:18] Conectando a MySQL...
+[2025-11-08 20:14:18] ✅ Conexión exitosa
+[2025-11-08 20:14:18] 
+--- CARGANDO DIM_TIEMPO ---
+[2025-11-08 20:14:18] 
+❌ ERROR: 1701 (42000): Cannot truncate a table referenced in a foreign key constraint (`dw_salud_mental`.`Hechos_Estres_SaludMental`, CONSTRAINT `hechos_estres_saludmental_ibfk_1`)
+[2025-11-08 20:14:18] Conexión cerrada
+[2025-11-08 20:16:56] ==================================================
+[2025-11-08 20:16:56] INICIANDO CARGA DE DIMENSIONES
+[2025-11-08 20:16:56] ==================================================
+[2025-11-08 20:16:56] Conectando a MySQL...
+[2025-11-08 20:16:56] ✅ Conexión exitosa
+[2025-11-08 20:16:56] Desactivando verificación de claves foráneas...
+[2025-11-08 20:16:56] ✅ FK checks desactivados
+[2025-11-08 20:16:56] 
+--- CARGANDO DIM_TIEMPO ---
+[2025-11-08 20:16:56] 
+❌ ERROR: 1055 (42000): Expression #3 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'dw_salud_mental.mental_health_staging.Timestamp' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+[2025-11-08 20:16:56] FK checks reactivados después del error
+[2025-11-08 20:16:56] Conexión cerrada
+[2025-11-08 20:17:54] ==================================================
+[2025-11-08 20:17:54] INICIANDO CARGA DE DIMENSIONES
+[2025-11-08 20:17:54] ==================================================
+[2025-11-08 20:17:54] Conectando a MySQL...
+[2025-11-08 20:17:54] ✅ Conexión exitosa
+[2025-11-08 20:17:54] Desactivando verificación de claves foráneas...
+[2025-11-08 20:17:54] ✅ FK checks desactivados
+[2025-11-08 20:17:54] 
+--- CARGANDO DIM_TIEMPO ---
+[2025-11-08 20:17:54] ✅ Dim_Tiempo cargada: 0 registros
+[2025-11-08 20:17:54] 
+--- CARGANDO DIM_GENERO ---
+[2025-11-08 20:17:54] ✅ Dim_Genero cargada: 2 registros
+[2025-11-08 20:17:54] 
+--- CARGANDO DIM_HISTORIAL ---
+[2025-11-08 20:17:54] ✅ Dim_Historial cargada: 2 registros
+[2025-11-08 20:17:54] 
+--- CARGANDO DIM_OCUPACION ---
+[2025-11-08 20:17:54] ✅ Dim_Ocupacion cargada: 5 registros
+[2025-11-08 20:17:54] 
+--- CARGANDO DIM_PAIS ---
+[2025-11-08 20:17:54] ✅ Dim_Pais cargada: 35 registros
+[2025-11-08 20:17:54] 
+--- CARGANDO DIM_AISLAMIENTO ---
+[2025-11-08 20:17:54] ✅ Dim_Aislamiento cargada: 5 registros
+[2025-11-08 20:17:54] 
+--- CARGANDO DIM_SINTOMAS ---
+[2025-11-08 20:17:54] ✅ Dim_Sintomas cargada: 0 registros
+[2025-11-08 20:17:54]   Distribución del indicador_inferido_estres:
+[2025-11-08 20:17:54] 
+--- CARGANDO DIM_ACCESO ---
+[2025-11-08 20:17:54] ✅ Dim_Acceso cargada: 0 registros
+[2025-11-08 20:17:54] 
+Reactivando verificación de claves foráneas...
+[2025-11-08 20:17:54] ✅ FK checks reactivados
+[2025-11-08 20:17:54] 
+==================================================
+[2025-11-08 20:17:54] VALIDACIÓN DE DIMENSIONES
+[2025-11-08 20:17:54] ==================================================
+[2025-11-08 20:17:54] ❌ Dim_Tiempo: 0 registros (ERROR)
+[2025-11-08 20:17:54] ✅ Dim_Genero: 2 registros
+[2025-11-08 20:17:54] ✅ Dim_Historial: 2 registros
+[2025-11-08 20:17:54] ✅ Dim_Ocupacion: 5 registros
+[2025-11-08 20:17:54] ✅ Dim_Pais: 35 registros
+[2025-11-08 20:17:54] ✅ Dim_Aislamiento: 5 registros
+[2025-11-08 20:17:54] ❌ Dim_Sintomas: 0 registros (ERROR)
+[2025-11-08 20:17:54] ❌ Dim_Acceso: 0 registros (ERROR)
+[2025-11-08 20:17:54] 
+==================================================
+[2025-11-08 20:17:54] DIMENSIONES CARGADAS EXITOSAMENTE
+[2025-11-08 20:17:54] ==================================================
+[2025-11-08 20:17:54] Conexión cerrada
+[2025-11-08 20:20:01] ==================================================
+[2025-11-08 20:20:01] INICIANDO CARGA DE DIMENSIONES
+[2025-11-08 20:20:01] ==================================================
+[2025-11-08 20:20:01] Conectando a MySQL...
+[2025-11-08 20:20:01] ✅ Conexión exitosa
+[2025-11-08 20:20:01] Desactivando verificación de claves foráneas...
+[2025-11-08 20:20:01] ✅ FK checks desactivados
+[2025-11-08 20:20:01] 
+--- CARGANDO DIM_TIEMPO ---
+[2025-11-08 20:20:01] Encontrados 0 períodos únicos
+[2025-11-08 20:20:01] ✅ Dim_Tiempo cargada: 0 registros
+[2025-11-08 20:20:01] 
+--- CARGANDO DIM_GENERO ---
+[2025-11-08 20:20:01] ✅ Dim_Genero cargada: 2 registros
+[2025-11-08 20:20:01] 
+--- CARGANDO DIM_HISTORIAL ---
+[2025-11-08 20:20:01] ✅ Dim_Historial cargada: 2 registros
+[2025-11-08 20:20:01] 
+--- CARGANDO DIM_OCUPACION ---
+[2025-11-08 20:20:01] ✅ Dim_Ocupacion cargada: 5 registros
+[2025-11-08 20:20:01] 
+--- CARGANDO DIM_PAIS ---
+[2025-11-08 20:20:01] ✅ Dim_Pais cargada: 35 registros
+[2025-11-08 20:20:01] 
+--- CARGANDO DIM_AISLAMIENTO ---
+[2025-11-08 20:20:01] ✅ Dim_Aislamiento cargada: 5 registros
+[2025-11-08 20:20:01] 
+--- CARGANDO DIM_SINTOMAS ---
+[2025-11-08 20:20:01] Encontradas 0 combinaciones únicas de síntomas
+[2025-11-08 20:20:01] ✅ Dim_Sintomas cargada: 0 registros
+[2025-11-08 20:20:01]   Distribución del indicador_inferido_estres:
+[2025-11-08 20:20:01] 
+--- CARGANDO DIM_ACCESO ---
+[2025-11-08 20:20:01] Encontradas 0 combinaciones únicas de acceso
+[2025-11-08 20:20:01] ✅ Dim_Acceso cargada: 0 registros
+[2025-11-08 20:20:01] 
+Reactivando verificación de claves foráneas...
+[2025-11-08 20:20:01] ✅ FK checks reactivados
+[2025-11-08 20:20:01] 
+==================================================
+[2025-11-08 20:20:01] VALIDACIÓN DE DIMENSIONES
+[2025-11-08 20:20:01] ==================================================
+[2025-11-08 20:20:01] ❌ Dim_Tiempo: 0 registros (ERROR)
+[2025-11-08 20:20:01] ✅ Dim_Genero: 2 registros
+[2025-11-08 20:20:01] ✅ Dim_Historial: 2 registros
+[2025-11-08 20:20:01] ✅ Dim_Ocupacion: 5 registros
+[2025-11-08 20:20:01] ✅ Dim_Pais: 35 registros
+[2025-11-08 20:20:01] ✅ Dim_Aislamiento: 5 registros
+[2025-11-08 20:20:01] ❌ Dim_Sintomas: 0 registros (ERROR)
+[2025-11-08 20:20:01] ❌ Dim_Acceso: 0 registros (ERROR)
+[2025-11-08 20:20:01] 
+==================================================
+[2025-11-08 20:20:01] DIMENSIONES CARGADAS EXITOSAMENTE
+[2025-11-08 20:20:01] ==================================================
+[2025-11-08 20:20:01] Conexión cerrada
+[2025-11-09 13:10:27] ==================================================
+[2025-11-09 13:10:27] INICIANDO CARGA DE STAGING
+[2025-11-09 13:10:27] ==================================================
+[2025-11-09 13:10:27] Conectando a MySQL...
+[2025-11-09 13:10:27] ✅ Conexión exitosa a MySQL
+[2025-11-09 13:10:27] 
+Verificando tabla mental_health_staging...
+[2025-11-09 13:10:27] ✅ Tabla mental_health_staging existe
+[2025-11-09 13:10:27] 
+Limpiando tabla staging...
+[2025-11-09 13:10:27] ✅ Tabla staging limpiada
+[2025-11-09 13:10:27] 
+Cargando CSV desde: data/processed/mental_health_clean.csv
+[2025-11-09 13:10:27] ✅ CSV cargado: 290051 registros, 17 columnas
+[2025-11-09 13:10:27] 
+Insertando datos en lotes de 1000 registros...
+[2025-11-09 13:10:27]   Procesado: 1000/290051 (0.3%)
+[2025-11-09 13:10:27]   Procesado: 2000/290051 (0.7%)
+[2025-11-09 13:10:27]   Procesado: 3000/290051 (1.0%)
+[2025-11-09 13:10:27]   Procesado: 4000/290051 (1.4%)
+[2025-11-09 13:10:27]   Procesado: 5000/290051 (1.7%)
+[2025-11-09 13:10:28]   Procesado: 6000/290051 (2.1%)
+[2025-11-09 13:10:28]   Procesado: 7000/290051 (2.4%)
+[2025-11-09 13:10:28]   Procesado: 8000/290051 (2.8%)
+[2025-11-09 13:10:28]   Procesado: 9000/290051 (3.1%)
+[2025-11-09 13:10:28]   Procesado: 10000/290051 (3.4%)
+[2025-11-09 13:10:28]   Procesado: 11000/290051 (3.8%)
+[2025-11-09 13:10:28]   Procesado: 12000/290051 (4.1%)
+[2025-11-09 13:10:28]   Procesado: 13000/290051 (4.5%)
+[2025-11-09 13:10:28]   Procesado: 14000/290051 (4.8%)
+[2025-11-09 13:10:28]   Procesado: 15000/290051 (5.2%)
+[2025-11-09 13:10:28]   Procesado: 16000/290051 (5.5%)
+[2025-11-09 13:10:28]   Procesado: 17000/290051 (5.9%)
+[2025-11-09 13:10:28]   Procesado: 18000/290051 (6.2%)
+[2025-11-09 13:10:28]   Procesado: 19000/290051 (6.6%)
+[2025-11-09 13:10:28]   Procesado: 20000/290051 (6.9%)
+[2025-11-09 13:10:28]   Procesado: 21000/290051 (7.2%)
+[2025-11-09 13:10:28]   Procesado: 22000/290051 (7.6%)
+[2025-11-09 13:10:29]   Procesado: 23000/290051 (7.9%)
+[2025-11-09 13:10:29]   Procesado: 24000/290051 (8.3%)
+[2025-11-09 13:10:29]   Procesado: 25000/290051 (8.6%)
+[2025-11-09 13:10:29]   Procesado: 26000/290051 (9.0%)
+[2025-11-09 13:10:29]   Procesado: 27000/290051 (9.3%)
+[2025-11-09 13:10:29]   Procesado: 28000/290051 (9.7%)
+[2025-11-09 13:10:29]   Procesado: 29000/290051 (10.0%)
+[2025-11-09 13:10:29]   Procesado: 30000/290051 (10.3%)
+[2025-11-09 13:10:29]   Procesado: 31000/290051 (10.7%)
+[2025-11-09 13:10:29]   Procesado: 32000/290051 (11.0%)
+[2025-11-09 13:10:29]   Procesado: 33000/290051 (11.4%)
+[2025-11-09 13:10:29]   Procesado: 34000/290051 (11.7%)
+[2025-11-09 13:10:29]   Procesado: 35000/290051 (12.1%)
+[2025-11-09 13:10:29]   Procesado: 36000/290051 (12.4%)
+[2025-11-09 13:10:29]   Procesado: 37000/290051 (12.8%)
+[2025-11-09 13:10:29]   Procesado: 38000/290051 (13.1%)
+[2025-11-09 13:10:29]   Procesado: 39000/290051 (13.4%)
+[2025-11-09 13:10:29]   Procesado: 40000/290051 (13.8%)
+[2025-11-09 13:10:30]   Procesado: 41000/290051 (14.1%)
+[2025-11-09 13:10:30]   Procesado: 42000/290051 (14.5%)
+[2025-11-09 13:10:30]   Procesado: 43000/290051 (14.8%)
+[2025-11-09 13:10:30]   Procesado: 44000/290051 (15.2%)
+[2025-11-09 13:10:30]   Procesado: 45000/290051 (15.5%)
+[2025-11-09 13:10:30]   Procesado: 46000/290051 (15.9%)
+[2025-11-09 13:10:30]   Procesado: 47000/290051 (16.2%)
+[2025-11-09 13:10:30]   Procesado: 48000/290051 (16.5%)
+[2025-11-09 13:10:30]   Procesado: 49000/290051 (16.9%)
+[2025-11-09 13:10:30]   Procesado: 50000/290051 (17.2%)
+[2025-11-09 13:10:30]   Procesado: 51000/290051 (17.6%)
+[2025-11-09 13:10:30]   Procesado: 52000/290051 (17.9%)
+[2025-11-09 13:10:30]   Procesado: 53000/290051 (18.3%)
+[2025-11-09 13:10:30]   Procesado: 54000/290051 (18.6%)
+[2025-11-09 13:10:30]   Procesado: 55000/290051 (19.0%)
+[2025-11-09 13:10:30]   Procesado: 56000/290051 (19.3%)
+[2025-11-09 13:10:30]   Procesado: 57000/290051 (19.7%)
+[2025-11-09 13:10:30]   Procesado: 58000/290051 (20.0%)
+[2025-11-09 13:10:31]   Procesado: 59000/290051 (20.3%)
+[2025-11-09 13:10:31]   Procesado: 60000/290051 (20.7%)
+[2025-11-09 13:10:31]   Procesado: 61000/290051 (21.0%)
+[2025-11-09 13:10:31]   Procesado: 62000/290051 (21.4%)
+[2025-11-09 13:10:31]   Procesado: 63000/290051 (21.7%)
+[2025-11-09 13:10:31]   Procesado: 64000/290051 (22.1%)
+[2025-11-09 13:10:31]   Procesado: 65000/290051 (22.4%)
+[2025-11-09 13:10:31]   Procesado: 66000/290051 (22.8%)
+[2025-11-09 13:10:31]   Procesado: 67000/290051 (23.1%)
+[2025-11-09 13:10:31]   Procesado: 68000/290051 (23.4%)
+[2025-11-09 13:10:31]   Procesado: 69000/290051 (23.8%)
+[2025-11-09 13:10:31]   Procesado: 70000/290051 (24.1%)
+[2025-11-09 13:10:31]   Procesado: 71000/290051 (24.5%)
+[2025-11-09 13:10:31]   Procesado: 72000/290051 (24.8%)
+[2025-11-09 13:10:31]   Procesado: 73000/290051 (25.2%)
+[2025-11-09 13:10:31]   Procesado: 74000/290051 (25.5%)
+[2025-11-09 13:10:31]   Procesado: 75000/290051 (25.9%)
+[2025-11-09 13:10:32]   Procesado: 76000/290051 (26.2%)
+[2025-11-09 13:10:32]   Procesado: 77000/290051 (26.5%)
+[2025-11-09 13:10:32]   Procesado: 78000/290051 (26.9%)
+[2025-11-09 13:10:32]   Procesado: 79000/290051 (27.2%)
+[2025-11-09 13:10:32]   Procesado: 80000/290051 (27.6%)
+[2025-11-09 13:10:32]   Procesado: 81000/290051 (27.9%)
+[2025-11-09 13:10:32]   Procesado: 82000/290051 (28.3%)
+[2025-11-09 13:10:32]   Procesado: 83000/290051 (28.6%)
+[2025-11-09 13:10:32]   Procesado: 84000/290051 (29.0%)
+[2025-11-09 13:10:32]   Procesado: 85000/290051 (29.3%)
+[2025-11-09 13:10:32]   Procesado: 86000/290051 (29.6%)
+[2025-11-09 13:10:32]   Procesado: 87000/290051 (30.0%)
+[2025-11-09 13:10:32]   Procesado: 88000/290051 (30.3%)
+[2025-11-09 13:10:32]   Procesado: 89000/290051 (30.7%)
+[2025-11-09 13:10:32]   Procesado: 90000/290051 (31.0%)
+[2025-11-09 13:10:32]   Procesado: 91000/290051 (31.4%)
+[2025-11-09 13:10:32]   Procesado: 92000/290051 (31.7%)
+[2025-11-09 13:10:32]   Procesado: 93000/290051 (32.1%)
+[2025-11-09 13:10:33]   Procesado: 94000/290051 (32.4%)
+[2025-11-09 13:10:33]   Procesado: 95000/290051 (32.8%)
+[2025-11-09 13:10:33]   Procesado: 96000/290051 (33.1%)
+[2025-11-09 13:10:33]   Procesado: 97000/290051 (33.4%)
+[2025-11-09 13:10:33]   Procesado: 98000/290051 (33.8%)
+[2025-11-09 13:10:33]   Procesado: 99000/290051 (34.1%)
+[2025-11-09 13:10:33]   Procesado: 100000/290051 (34.5%)
+[2025-11-09 13:10:33]   Procesado: 101000/290051 (34.8%)
+[2025-11-09 13:10:33]   Procesado: 102000/290051 (35.2%)
+[2025-11-09 13:10:33]   Procesado: 103000/290051 (35.5%)
+[2025-11-09 13:10:33]   Procesado: 104000/290051 (35.9%)
+[2025-11-09 13:10:33]   Procesado: 105000/290051 (36.2%)
+[2025-11-09 13:10:33]   Procesado: 106000/290051 (36.5%)
+[2025-11-09 13:10:33]   Procesado: 107000/290051 (36.9%)
+[2025-11-09 13:10:33]   Procesado: 108000/290051 (37.2%)
+[2025-11-09 13:10:33]   Procesado: 109000/290051 (37.6%)
+[2025-11-09 13:10:33]   Procesado: 110000/290051 (37.9%)
+[2025-11-09 13:10:33]   Procesado: 111000/290051 (38.3%)
+[2025-11-09 13:10:34]   Procesado: 112000/290051 (38.6%)
+[2025-11-09 13:10:34]   Procesado: 113000/290051 (39.0%)
+[2025-11-09 13:10:34]   Procesado: 114000/290051 (39.3%)
+[2025-11-09 13:10:34]   Procesado: 115000/290051 (39.6%)
+[2025-11-09 13:10:34]   Procesado: 116000/290051 (40.0%)
+[2025-11-09 13:10:34]   Procesado: 117000/290051 (40.3%)
+[2025-11-09 13:10:34]   Procesado: 118000/290051 (40.7%)
+[2025-11-09 13:10:34]   Procesado: 119000/290051 (41.0%)
+[2025-11-09 13:10:34]   Procesado: 120000/290051 (41.4%)
+[2025-11-09 13:10:34]   Procesado: 121000/290051 (41.7%)
+[2025-11-09 13:10:34]   Procesado: 122000/290051 (42.1%)
+[2025-11-09 13:10:34]   Procesado: 123000/290051 (42.4%)
+[2025-11-09 13:10:34]   Procesado: 124000/290051 (42.8%)
+[2025-11-09 13:10:34]   Procesado: 125000/290051 (43.1%)
+[2025-11-09 13:10:34]   Procesado: 126000/290051 (43.4%)
+[2025-11-09 13:10:34]   Procesado: 127000/290051 (43.8%)
+[2025-11-09 13:10:34]   Procesado: 128000/290051 (44.1%)
+[2025-11-09 13:10:35]   Procesado: 129000/290051 (44.5%)
+[2025-11-09 13:10:35]   Procesado: 130000/290051 (44.8%)
+[2025-11-09 13:10:35]   Procesado: 131000/290051 (45.2%)
+[2025-11-09 13:10:35]   Procesado: 132000/290051 (45.5%)
+[2025-11-09 13:10:35]   Procesado: 133000/290051 (45.9%)
+[2025-11-09 13:10:35]   Procesado: 134000/290051 (46.2%)
+[2025-11-09 13:10:35]   Procesado: 135000/290051 (46.5%)
+[2025-11-09 13:10:35]   Procesado: 136000/290051 (46.9%)
+[2025-11-09 13:10:35]   Procesado: 137000/290051 (47.2%)
+[2025-11-09 13:10:35]   Procesado: 138000/290051 (47.6%)
+[2025-11-09 13:10:35]   Procesado: 139000/290051 (47.9%)
+[2025-11-09 13:10:35]   Procesado: 140000/290051 (48.3%)
+[2025-11-09 13:10:35]   Procesado: 141000/290051 (48.6%)
+[2025-11-09 13:10:35]   Procesado: 142000/290051 (49.0%)
+[2025-11-09 13:10:35]   Procesado: 143000/290051 (49.3%)
+[2025-11-09 13:10:35]   Procesado: 144000/290051 (49.6%)
+[2025-11-09 13:10:35]   Procesado: 145000/290051 (50.0%)
+[2025-11-09 13:10:35]   Procesado: 146000/290051 (50.3%)
+[2025-11-09 13:10:36]   Procesado: 147000/290051 (50.7%)
+[2025-11-09 13:10:36]   Procesado: 148000/290051 (51.0%)
+[2025-11-09 13:10:36]   Procesado: 149000/290051 (51.4%)
+[2025-11-09 13:10:36]   Procesado: 150000/290051 (51.7%)
+[2025-11-09 13:10:36]   Procesado: 151000/290051 (52.1%)
+[2025-11-09 13:10:36]   Procesado: 152000/290051 (52.4%)
+[2025-11-09 13:10:36]   Procesado: 153000/290051 (52.7%)
+[2025-11-09 13:10:36]   Procesado: 154000/290051 (53.1%)
+[2025-11-09 13:10:36]   Procesado: 155000/290051 (53.4%)
+[2025-11-09 13:10:36]   Procesado: 156000/290051 (53.8%)
+[2025-11-09 13:10:36]   Procesado: 157000/290051 (54.1%)
+[2025-11-09 13:10:36]   Procesado: 158000/290051 (54.5%)
+[2025-11-09 13:10:36]   Procesado: 159000/290051 (54.8%)
+[2025-11-09 13:10:36]   Procesado: 160000/290051 (55.2%)
+[2025-11-09 13:10:36]   Procesado: 161000/290051 (55.5%)
+[2025-11-09 13:10:36]   Procesado: 162000/290051 (55.9%)
+[2025-11-09 13:10:36]   Procesado: 163000/290051 (56.2%)
+[2025-11-09 13:10:36]   Procesado: 164000/290051 (56.5%)
+[2025-11-09 13:10:37]   Procesado: 165000/290051 (56.9%)
+[2025-11-09 13:10:37]   Procesado: 166000/290051 (57.2%)
+[2025-11-09 13:10:37]   Procesado: 167000/290051 (57.6%)
+[2025-11-09 13:10:37]   Procesado: 168000/290051 (57.9%)
+[2025-11-09 13:10:37]   Procesado: 169000/290051 (58.3%)
+[2025-11-09 13:10:37]   Procesado: 170000/290051 (58.6%)
+[2025-11-09 13:10:37]   Procesado: 171000/290051 (59.0%)
+[2025-11-09 13:10:37]   Procesado: 172000/290051 (59.3%)
+[2025-11-09 13:10:37]   Procesado: 173000/290051 (59.6%)
+[2025-11-09 13:10:37]   Procesado: 174000/290051 (60.0%)
+[2025-11-09 13:10:37]   Procesado: 175000/290051 (60.3%)
+[2025-11-09 13:10:37]   Procesado: 176000/290051 (60.7%)
+[2025-11-09 13:10:37]   Procesado: 177000/290051 (61.0%)
+[2025-11-09 13:10:37]   Procesado: 178000/290051 (61.4%)
+[2025-11-09 13:10:37]   Procesado: 179000/290051 (61.7%)
+[2025-11-09 13:10:37]   Procesado: 180000/290051 (62.1%)
+[2025-11-09 13:10:37]   Procesado: 181000/290051 (62.4%)
+[2025-11-09 13:10:38]   Procesado: 182000/290051 (62.7%)
+[2025-11-09 13:10:38]   Procesado: 183000/290051 (63.1%)
+[2025-11-09 13:10:38]   Procesado: 184000/290051 (63.4%)
+[2025-11-09 13:10:38]   Procesado: 185000/290051 (63.8%)
+[2025-11-09 13:10:38]   Procesado: 186000/290051 (64.1%)
+[2025-11-09 13:10:38]   Procesado: 187000/290051 (64.5%)
+[2025-11-09 13:10:38]   Procesado: 188000/290051 (64.8%)
+[2025-11-09 13:10:38]   Procesado: 189000/290051 (65.2%)
+[2025-11-09 13:10:38]   Procesado: 190000/290051 (65.5%)
+[2025-11-09 13:10:38]   Procesado: 191000/290051 (65.9%)
+[2025-11-09 13:10:38]   Procesado: 192000/290051 (66.2%)
+[2025-11-09 13:10:38]   Procesado: 193000/290051 (66.5%)
+[2025-11-09 13:10:38]   Procesado: 194000/290051 (66.9%)
+[2025-11-09 13:10:38]   Procesado: 195000/290051 (67.2%)
+[2025-11-09 13:10:38]   Procesado: 196000/290051 (67.6%)
+[2025-11-09 13:10:38]   Procesado: 197000/290051 (67.9%)
+[2025-11-09 13:10:38]   Procesado: 198000/290051 (68.3%)
+[2025-11-09 13:10:38]   Procesado: 199000/290051 (68.6%)
+[2025-11-09 13:10:38]   Procesado: 200000/290051 (69.0%)
+[2025-11-09 13:10:39]   Procesado: 201000/290051 (69.3%)
+[2025-11-09 13:10:39]   Procesado: 202000/290051 (69.6%)
+[2025-11-09 13:10:39]   Procesado: 203000/290051 (70.0%)
+[2025-11-09 13:10:39]   Procesado: 204000/290051 (70.3%)
+[2025-11-09 13:10:39]   Procesado: 205000/290051 (70.7%)
+[2025-11-09 13:10:39]   Procesado: 206000/290051 (71.0%)
+[2025-11-09 13:10:39]   Procesado: 207000/290051 (71.4%)
+[2025-11-09 13:10:39]   Procesado: 208000/290051 (71.7%)
+[2025-11-09 13:10:39]   Procesado: 209000/290051 (72.1%)
+[2025-11-09 13:10:39]   Procesado: 210000/290051 (72.4%)
+[2025-11-09 13:10:39]   Procesado: 211000/290051 (72.7%)
+[2025-11-09 13:10:39]   Procesado: 212000/290051 (73.1%)
+[2025-11-09 13:10:39]   Procesado: 213000/290051 (73.4%)
+[2025-11-09 13:10:39]   Procesado: 214000/290051 (73.8%)
+[2025-11-09 13:10:39]   Procesado: 215000/290051 (74.1%)
+[2025-11-09 13:10:39]   Procesado: 216000/290051 (74.5%)
+[2025-11-09 13:10:39]   Procesado: 217000/290051 (74.8%)
+[2025-11-09 13:10:39]   Procesado: 218000/290051 (75.2%)
+[2025-11-09 13:10:40]   Procesado: 219000/290051 (75.5%)
+[2025-11-09 13:10:40]   Procesado: 220000/290051 (75.8%)
+[2025-11-09 13:10:40]   Procesado: 221000/290051 (76.2%)
+[2025-11-09 13:10:40]   Procesado: 222000/290051 (76.5%)
+[2025-11-09 13:10:40]   Procesado: 223000/290051 (76.9%)
+[2025-11-09 13:10:40]   Procesado: 224000/290051 (77.2%)
+[2025-11-09 13:10:40]   Procesado: 225000/290051 (77.6%)
+[2025-11-09 13:10:40]   Procesado: 226000/290051 (77.9%)
+[2025-11-09 13:10:40]   Procesado: 227000/290051 (78.3%)
+[2025-11-09 13:10:40]   Procesado: 228000/290051 (78.6%)
+[2025-11-09 13:10:40]   Procesado: 229000/290051 (79.0%)
+[2025-11-09 13:10:40]   Procesado: 230000/290051 (79.3%)
+[2025-11-09 13:10:40]   Procesado: 231000/290051 (79.6%)
+[2025-11-09 13:10:40]   Procesado: 232000/290051 (80.0%)
+[2025-11-09 13:10:40]   Procesado: 233000/290051 (80.3%)
+[2025-11-09 13:10:40]   Procesado: 234000/290051 (80.7%)
+[2025-11-09 13:10:40]   Procesado: 235000/290051 (81.0%)
+[2025-11-09 13:10:40]   Procesado: 236000/290051 (81.4%)
+[2025-11-09 13:10:41]   Procesado: 237000/290051 (81.7%)
+[2025-11-09 13:10:41]   Procesado: 238000/290051 (82.1%)
+[2025-11-09 13:10:41]   Procesado: 239000/290051 (82.4%)
+[2025-11-09 13:10:41]   Procesado: 240000/290051 (82.7%)
+[2025-11-09 13:10:41]   Procesado: 241000/290051 (83.1%)
+[2025-11-09 13:10:41]   Procesado: 242000/290051 (83.4%)
+[2025-11-09 13:10:41]   Procesado: 243000/290051 (83.8%)
+[2025-11-09 13:10:41]   Procesado: 244000/290051 (84.1%)
+[2025-11-09 13:10:41]   Procesado: 245000/290051 (84.5%)
+[2025-11-09 13:10:41]   Procesado: 246000/290051 (84.8%)
+[2025-11-09 13:10:41]   Procesado: 247000/290051 (85.2%)
+[2025-11-09 13:10:41]   Procesado: 248000/290051 (85.5%)
+[2025-11-09 13:10:41]   Procesado: 249000/290051 (85.8%)
+[2025-11-09 13:10:41]   Procesado: 250000/290051 (86.2%)
+[2025-11-09 13:10:41]   Procesado: 251000/290051 (86.5%)
+[2025-11-09 13:10:42]   Procesado: 252000/290051 (86.9%)
+[2025-11-09 13:10:42]   Procesado: 253000/290051 (87.2%)
+[2025-11-09 13:10:42]   Procesado: 254000/290051 (87.6%)
+[2025-11-09 13:10:42]   Procesado: 255000/290051 (87.9%)
+[2025-11-09 13:10:42]   Procesado: 256000/290051 (88.3%)
+[2025-11-09 13:10:42]   Procesado: 257000/290051 (88.6%)
+[2025-11-09 13:10:42]   Procesado: 258000/290051 (88.9%)
+[2025-11-09 13:10:42]   Procesado: 259000/290051 (89.3%)
+[2025-11-09 13:10:42]   Procesado: 260000/290051 (89.6%)
+[2025-11-09 13:10:42]   Procesado: 261000/290051 (90.0%)
+[2025-11-09 13:10:42]   Procesado: 262000/290051 (90.3%)
+[2025-11-09 13:10:42]   Procesado: 263000/290051 (90.7%)
+[2025-11-09 13:10:42]   Procesado: 264000/290051 (91.0%)
+[2025-11-09 13:10:42]   Procesado: 265000/290051 (91.4%)
+[2025-11-09 13:10:42]   Procesado: 266000/290051 (91.7%)
+[2025-11-09 13:10:42]   Procesado: 267000/290051 (92.1%)
+[2025-11-09 13:10:42]   Procesado: 268000/290051 (92.4%)
+[2025-11-09 13:10:42]   Procesado: 269000/290051 (92.7%)
+[2025-11-09 13:10:43]   Procesado: 270000/290051 (93.1%)
+[2025-11-09 13:10:43]   Procesado: 271000/290051 (93.4%)
+[2025-11-09 13:10:43]   Procesado: 272000/290051 (93.8%)
+[2025-11-09 13:10:43]   Procesado: 273000/290051 (94.1%)
+[2025-11-09 13:10:43]   Procesado: 274000/290051 (94.5%)
+[2025-11-09 13:10:43]   Procesado: 275000/290051 (94.8%)
+[2025-11-09 13:10:43]   Procesado: 276000/290051 (95.2%)
+[2025-11-09 13:10:43]   Procesado: 277000/290051 (95.5%)
+[2025-11-09 13:10:43]   Procesado: 278000/290051 (95.8%)
+[2025-11-09 13:10:43]   Procesado: 279000/290051 (96.2%)
+[2025-11-09 13:10:43]   Procesado: 280000/290051 (96.5%)
+[2025-11-09 13:10:43]   Procesado: 281000/290051 (96.9%)
+[2025-11-09 13:10:43]   Procesado: 282000/290051 (97.2%)
+[2025-11-09 13:10:43]   Procesado: 283000/290051 (97.6%)
+[2025-11-09 13:10:43]   Procesado: 284000/290051 (97.9%)
+[2025-11-09 13:10:43]   Procesado: 285000/290051 (98.3%)
+[2025-11-09 13:10:43]   Procesado: 286000/290051 (98.6%)
+[2025-11-09 13:10:43]   Procesado: 287000/290051 (98.9%)
+[2025-11-09 13:10:44]   Procesado: 288000/290051 (99.3%)
+[2025-11-09 13:10:44]   Procesado: 289000/290051 (99.6%)
+[2025-11-09 13:10:44]   Procesado: 290000/290051 (100.0%)
+[2025-11-09 13:10:44]   Procesado: 290051/290051 (100.0%)
+[2025-11-09 13:10:44] 
+✅ Inserción completada:
+[2025-11-09 13:10:44]   Registros insertados: 290051
+[2025-11-09 13:10:44]   Errores: 0
+[2025-11-09 13:10:44] 
+--- VALIDANDO CARGA ---
+[2025-11-09 13:10:44] Registros en staging: 290051
+[2025-11-09 13:10:44] Registros esperados: 290051
+[2025-11-09 13:10:44] ✅ Cantidad de registros correcta
+[2025-11-09 13:10:44] 
+Verificando campos críticos (no deben tener NULL)...
+[2025-11-09 13:10:44]   ✅ Timestamp: sin valores NULL
+[2025-11-09 13:10:44]   ✅ Gender: sin valores NULL
+[2025-11-09 13:10:44]   ✅ Country: sin valores NULL
+[2025-11-09 13:10:44]   ✅ Occupation: sin valores NULL
+[2025-11-09 13:10:44]   ✅ family_history: sin valores NULL
+[2025-11-09 13:10:44]   ✅ treatment: sin valores NULL
+[2025-11-09 13:10:44]   ✅ Days_Indoors: sin valores NULL
+[2025-11-09 13:10:44]   ✅ Growing_Stress: sin valores NULL
+[2025-11-09 13:10:44]   ✅ Mood_Swings: sin valores NULL
+[2025-11-09 13:10:44]   ✅ Coping_Struggles: sin valores NULL
+[2025-11-09 13:10:44]   ✅ Social_Weakness: sin valores NULL
+[2025-11-09 13:10:44]   ✅ care_options: sin valores NULL
+[2025-11-09 13:10:44]   ✅ mental_health_interview: sin valores NULL
+[2025-11-09 13:10:44] 
+Distribución por género:
+[2025-11-09 13:10:44]   Female: 52151 registros
+[2025-11-09 13:10:44]   Male: 237900 registros
+[2025-11-09 13:10:44] 
+Rango de fechas:
+[2025-11-09 13:10:44]   Desde: 2014-08-27 11:29:00
+[2025-11-09 13:10:44]   Hasta: 2016-02-01 23:04:00
+[2025-11-09 13:10:44] 
+Top 5 países:
+[2025-11-09 13:10:44]   United States: 169112 registros
+[2025-11-09 13:10:44]   United Kingdom: 51356 registros
+[2025-11-09 13:10:44]   Canada: 18699 registros
+[2025-11-09 13:10:44]   Australia: 6014 registros
+[2025-11-09 13:10:44]   Netherlands: 5891 registros
+[2025-11-09 13:10:44] 
+==================================================
+[2025-11-09 13:10:44] CARGA DE STAGING COMPLETADA EXITOSAMENTE
+[2025-11-09 13:10:44] ==================================================
+[2025-11-09 13:10:44] Conexión cerrada
+[2025-11-09 13:10:58] ==================================================
+[2025-11-09 13:10:58] INICIANDO CARGA DE DIMENSIONES
+[2025-11-09 13:10:58] ==================================================
+[2025-11-09 13:10:58] Conectando a MySQL...
+[2025-11-09 13:10:58] ✅ Conexión exitosa
+[2025-11-09 13:10:58] Desactivando verificación de claves foráneas...
+[2025-11-09 13:10:58] ✅ FK checks desactivados
+[2025-11-09 13:10:58] 
+--- CARGANDO DIM_TIEMPO ---
+[2025-11-09 13:10:59] 
+❌ ERROR: 1411: Incorrect datetime value: '10/2/2014 21:25' for function str_to_date
+[2025-11-09 13:10:59] FK checks reactivados después del error
+[2025-11-09 13:10:59] Conexión cerrada
+[2025-11-09 13:12:36] ==================================================
+[2025-11-09 13:12:36] INICIANDO CARGA DE DIMENSIONES
+[2025-11-09 13:12:36] ==================================================
+[2025-11-09 13:12:36] Conectando a MySQL...
+[2025-11-09 13:12:36] ✅ Conexión exitosa
+[2025-11-09 13:12:36] Desactivando verificación de claves foráneas...
+[2025-11-09 13:12:36] ✅ FK checks desactivados
+[2025-11-09 13:12:36] 
+--- CARGANDO DIM_TIEMPO ---
+[2025-11-09 13:12:37] 
+❌ ERROR: 1411: Incorrect datetime value: '10/2/2014 21:25' for function str_to_date
+[2025-11-09 13:12:37] FK checks reactivados después del error
+[2025-11-09 13:12:37] Conexión cerrada
+[2025-11-09 13:13:11] ==================================================
+[2025-11-09 13:13:11] INICIANDO CARGA DE DIMENSIONES
+[2025-11-09 13:13:11] ==================================================
+[2025-11-09 13:13:11] Conectando a MySQL...
+[2025-11-09 13:13:11] ✅ Conexión exitosa
+[2025-11-09 13:13:11] Desactivando verificación de claves foráneas...
+[2025-11-09 13:13:11] ✅ FK checks desactivados
+[2025-11-09 13:13:11] 
+--- CARGANDO DIM_TIEMPO ---
+[2025-11-09 13:13:11] 
+❌ ERROR: 1411: Incorrect datetime value: '10/2/2014 21:25' for function str_to_date
+[2025-11-09 13:13:11] FK checks reactivados después del error
+[2025-11-09 13:13:11] Conexión cerrada
+[2025-11-09 13:14:49] ==================================================
+[2025-11-09 13:14:49] INICIANDO CARGA DE DIMENSIONES
+[2025-11-09 13:14:49] ==================================================
+[2025-11-09 13:14:49] Conectando a MySQL...
+[2025-11-09 13:14:49] ✅ Conexión exitosa
+[2025-11-09 13:14:49] Desactivando verificación de claves foráneas...
+[2025-11-09 13:14:49] ✅ FK checks desactivados
+[2025-11-09 13:14:49] 
+--- CARGANDO DIM_TIEMPO ---
+[2025-11-09 13:14:49] 
+❌ ERROR: 1411: Incorrect datetime value: '10/2/2014 21:25' for function str_to_date
+[2025-11-09 13:14:49] FK checks reactivados después del error
+[2025-11-09 13:14:49] Conexión cerrada
+[2025-11-09 13:15:30] ==================================================
+[2025-11-09 13:15:30] INICIANDO CARGA DE DIMENSIONES
+[2025-11-09 13:15:30] ==================================================
+[2025-11-09 13:15:30] Conectando a MySQL...
+[2025-11-09 13:15:30] ✅ Conexión exitosa
+[2025-11-09 13:15:30] Desactivando verificación de claves foráneas...
+[2025-11-09 13:15:30] ✅ FK checks desactivados
+[2025-11-09 13:15:30] 
+--- CARGANDO DIM_TIEMPO ---
+[2025-11-09 13:15:30] 
+❌ ERROR: 1411: Incorrect datetime value: '10/2/2014 21:25' for function str_to_date
+[2025-11-09 13:15:30] FK checks reactivados después del error
+[2025-11-09 13:15:30] Conexión cerrada
+[2025-11-09 13:16:51] ==================================================
+[2025-11-09 13:16:51] INICIANDO CARGA DE DIMENSIONES
+[2025-11-09 13:16:51] ==================================================
+[2025-11-09 13:16:51] Conectando a MySQL...
+[2025-11-09 13:16:51] ✅ Conexión exitosa
+[2025-11-09 13:16:51] Desactivando verificación de claves foráneas...
+[2025-11-09 13:16:51] ✅ FK checks desactivados
+[2025-11-09 13:16:51] 
+--- CARGANDO DIM_TIEMPO ---
+[2025-11-09 13:16:51] 
+❌ ERROR: 1292: Truncated incorrect INTEGER value: '2014 21:25'
+[2025-11-09 13:16:51] FK checks reactivados después del error
+[2025-11-09 13:16:51] Conexión cerrada
+[2025-11-09 13:17:18] ==================================================
+[2025-11-09 13:17:18] INICIANDO CARGA DE DIMENSIONES
+[2025-11-09 13:17:18] ==================================================
+[2025-11-09 13:17:18] Conectando a MySQL...
+[2025-11-09 13:17:18] ✅ Conexión exitosa
+[2025-11-09 13:17:18] Desactivando verificación de claves foráneas...
+[2025-11-09 13:17:18] ✅ FK checks desactivados
+[2025-11-09 13:17:18] 
+--- CARGANDO DIM_TIEMPO ---
+[2025-11-09 13:17:18] Encontrados 13 períodos únicos
+[2025-11-09 13:17:18] ✅ Dim_Tiempo cargada: 13 registros
+[2025-11-09 13:17:18] 
+--- CARGANDO DIM_GENERO ---
+[2025-11-09 13:17:18] ✅ Dim_Genero cargada: 2 registros
+[2025-11-09 13:17:18] 
+--- CARGANDO DIM_HISTORIAL ---
+[2025-11-09 13:17:18] ✅ Dim_Historial cargada: 2 registros
+[2025-11-09 13:17:18] 
+--- CARGANDO DIM_OCUPACION ---
+[2025-11-09 13:17:18] ✅ Dim_Ocupacion cargada: 5 registros
+[2025-11-09 13:17:18] 
+--- CARGANDO DIM_PAIS ---
+[2025-11-09 13:17:18] ✅ Dim_Pais cargada: 35 registros
+[2025-11-09 13:17:18] 
+--- CARGANDO DIM_AISLAMIENTO ---
+[2025-11-09 13:17:18] ✅ Dim_Aislamiento cargada: 5 registros
+[2025-11-09 13:17:18] 
+--- CARGANDO DIM_SINTOMAS ---
+[2025-11-09 13:17:18] Encontradas 259 combinaciones únicas de síntomas
+[2025-11-09 13:17:18] ✅ Dim_Sintomas cargada: 259 registros
+[2025-11-09 13:17:18]   Distribución del indicador_inferido_estres:
+[2025-11-09 13:17:18]     0: 138 combinaciones
+[2025-11-09 13:17:18]     1: 121 combinaciones
+[2025-11-09 13:17:18] 
+--- CARGANDO DIM_ACCESO ---
+[2025-11-09 13:17:19] Encontradas 18 combinaciones únicas de acceso
+[2025-11-09 13:17:19] ✅ Dim_Acceso cargada: 18 registros
+[2025-11-09 13:17:19] 
+Reactivando verificación de claves foráneas...
+[2025-11-09 13:17:19] ✅ FK checks reactivados
+[2025-11-09 13:17:19] 
+==================================================
+[2025-11-09 13:17:19] VALIDACIÓN DE DIMENSIONES
+[2025-11-09 13:17:19] ==================================================
+[2025-11-09 13:17:19] ✅ Dim_Tiempo: 13 registros
+[2025-11-09 13:17:19] ✅ Dim_Genero: 2 registros
+[2025-11-09 13:17:19] ✅ Dim_Historial: 2 registros
+[2025-11-09 13:17:19] ✅ Dim_Ocupacion: 5 registros
+[2025-11-09 13:17:19] ✅ Dim_Pais: 35 registros
+[2025-11-09 13:17:19] ✅ Dim_Aislamiento: 5 registros
+[2025-11-09 13:17:19] ✅ Dim_Sintomas: 259 registros
+[2025-11-09 13:17:19] ✅ Dim_Acceso: 18 registros
+[2025-11-09 13:17:19] 
+==================================================
+[2025-11-09 13:17:19] DIMENSIONES CARGADAS EXITOSAMENTE
+[2025-11-09 13:17:19] ==================================================
+[2025-11-09 13:17:19] Conexión cerrada
+[2025-11-09 13:19:43] ==================================================
+[2025-11-09 13:19:43] INICIANDO CARGA DE TABLA DE HECHOS
+[2025-11-09 13:19:43] ==================================================
+[2025-11-09 13:19:43] Conectando a MySQL...
+[2025-11-09 13:19:43] ✅ Conexión exitosa
+[2025-11-09 13:19:43] 
+--- VERIFICANDO DIMENSIONES ---
+[2025-11-09 13:19:43] ❌ Dim_Tiempo: 13 registros (mínimo esperado: 24)
+[2025-11-09 13:19:43] ✅ Dim_Genero: 2 registros
+[2025-11-09 13:19:43] ✅ Dim_Historial: 2 registros
+[2025-11-09 13:19:43] ✅ Dim_Ocupacion: 5 registros
+[2025-11-09 13:19:43] ❌ Dim_Pais: 35 registros (mínimo esperado: 36)
+[2025-11-09 13:19:43] ✅ Dim_Aislamiento: 5 registros
+[2025-11-09 13:19:43] ✅ Dim_Sintomas: 259 registros
+[2025-11-09 13:19:43] ✅ Dim_Acceso: 18 registros
+[2025-11-09 13:19:43] 
+❌ ERROR: Faltan dimensiones. Ejecuta 03_cargar_dimensiones.py primero
+[2025-11-09 13:19:43] Conexión cerrada
+[2025-11-09 13:22:29] ==================================================
+[2025-11-09 13:22:29] INICIANDO CARGA DE TABLA DE HECHOS
+[2025-11-09 13:22:29] ==================================================
+[2025-11-09 13:22:29] Conectando a MySQL...
+[2025-11-09 13:22:29] ✅ Conexión exitosa
+[2025-11-09 13:22:29] 
+--- VERIFICANDO DIMENSIONES ---
+[2025-11-09 13:22:29] ✅ Dim_Tiempo: 13 registros
+[2025-11-09 13:22:29] ✅ Dim_Genero: 2 registros
+[2025-11-09 13:22:29] ✅ Dim_Historial: 2 registros
+[2025-11-09 13:22:29] ✅ Dim_Ocupacion: 5 registros
+[2025-11-09 13:22:29] ✅ Dim_Pais: 35 registros
+[2025-11-09 13:22:29] ✅ Dim_Aislamiento: 5 registros
+[2025-11-09 13:22:29] ✅ Dim_Sintomas: 259 registros
+[2025-11-09 13:22:29] ✅ Dim_Acceso: 18 registros
+[2025-11-09 13:22:29] ✅ Todas las dimensiones verificadas
+[2025-11-09 13:22:29] 
+Limpiando tabla de hechos...
+[2025-11-09 13:22:29] ✅ Tabla de hechos limpiada
+[2025-11-09 13:22:29] 
+--- CARGANDO TABLA DE HECHOS ---
+[2025-11-09 13:22:29] Esto puede tomar varios minutos...
+[2025-11-09 13:22:29] Ejecutando query de agregación...
+[2025-11-09 13:23:24] ✅ Tabla de hechos cargada: 426815 registros agregados
+[2025-11-09 13:23:24] 
+--- VALIDANDO TABLA DE HECHOS ---
+[2025-11-09 13:23:24] Total de hechos: 426815
+[2025-11-09 13:23:24] 
+Verificando integridad referencial...
+[2025-11-09 13:23:24]   ✅ id_tiempo: sin huérfanos
+[2025-11-09 13:23:24]   ✅ id_genero: sin huérfanos
+[2025-11-09 13:23:24]   ✅ id_historial: sin huérfanos
+[2025-11-09 13:23:24]   ✅ id_ocupacion: sin huérfanos
+[2025-11-09 13:23:24]   ✅ id_pais: sin huérfanos
+[2025-11-09 13:23:24]   ✅ id_aislamiento: sin huérfanos
+[2025-11-09 13:23:24]   ✅ id_sintomas: sin huérfanos
+[2025-11-09 13:23:24]   ✅ id_acceso: sin huérfanos
+[2025-11-09 13:23:24] 
+Verificando rangos de indicadores...
+[2025-11-09 13:23:25] 
+Muestra de hechos (primeros 3 registros):
+[2025-11-09 13:23:25]   Hecho 1: tiempo=1, genero=1, pais=1, cant_estres=14, pct_estres=100.00, cant_trat=14
+[2025-11-09 13:23:25]   Hecho 2: tiempo=1, genero=1, pais=1, cant_estres=21, pct_estres=100.00, cant_trat=21
+[2025-11-09 13:23:25]   Hecho 3: tiempo=1, genero=1, pais=1, cant_estres=34, pct_estres=100.00, cant_trat=34
+[2025-11-09 13:23:25] 
+Distribución de hechos por género:
+[2025-11-09 13:23:25]   Female: 91851 hechos
+[2025-11-09 13:23:25]   Male: 334964 hechos
+[2025-11-09 13:23:25] 
+==================================================
+[2025-11-09 13:23:25] TABLA DE HECHOS CARGADA EXITOSAMENTE
+[2025-11-09 13:23:25] ==================================================
+[2025-11-09 13:23:25] Conexión cerrada
+[2025-11-09 13:25:09] 
+======================================================================
+[2025-11-09 13:25:09] VALIDACIÓN COMPLETA DEL DATA WAREHOUSE
+[2025-11-09 13:25:09] Data Warehouse: Análisis de Estrés y Salud Mental
+[2025-11-09 13:25:09] ======================================================================
+[2025-11-09 13:25:09] Conectando a MySQL...
+[2025-11-09 13:25:09] ✅ Conexión exitosa
+[2025-11-09 13:25:09] 
+==================================================
+[2025-11-09 13:25:09] 1. VALIDACIÓN DE ESTRUCTURA
+[2025-11-09 13:25:09] ==================================================
+[2025-11-09 13:25:09] ✅ mental_health_staging: 290051 registros
+[2025-11-09 13:25:09] ✅ Dim_Tiempo: 13 registros
+[2025-11-09 13:25:09] ✅ Dim_Genero: 2 registros
+[2025-11-09 13:25:09] ✅ Dim_Historial: 2 registros
+[2025-11-09 13:25:09] ✅ Dim_Ocupacion: 5 registros
+[2025-11-09 13:25:09] ✅ Dim_Pais: 35 registros
+[2025-11-09 13:25:09] ✅ Dim_Aislamiento: 5 registros
+[2025-11-09 13:25:09] ✅ Dim_Sintomas: 259 registros
+[2025-11-09 13:25:09] ✅ Dim_Acceso: 18 registros
+[2025-11-09 13:25:10] ✅ Hechos_Estres_SaludMental: 426815 registros
+[2025-11-09 13:25:10] 
+==================================================
+[2025-11-09 13:25:10] 2. VALIDACIÓN DE VOLUMETRÍA
+[2025-11-09 13:25:10] ==================================================
+[2025-11-09 13:25:10] ✅ mental_health_staging: 290051 registros (mínimo: 10000)
+[2025-11-09 13:25:10] ❌ Dim_Tiempo: 13 registros (esperado mínimo: 24)
+[2025-11-09 13:25:10] ✅ Dim_Genero: 2 registros (mínimo: 2)
+[2025-11-09 13:25:10] ✅ Dim_Historial: 2 registros (mínimo: 2)
+[2025-11-09 13:25:10] ✅ Dim_Ocupacion: 5 registros (mínimo: 5)
+[2025-11-09 13:25:10] ❌ Dim_Pais: 35 registros (esperado mínimo: 36)
+[2025-11-09 13:25:10] ✅ Dim_Aislamiento: 5 registros (mínimo: 5)
+[2025-11-09 13:25:10] ✅ Dim_Sintomas: 259 registros (mínimo: 10)
+[2025-11-09 13:25:10] ✅ Dim_Acceso: 18 registros (mínimo: 8)
+[2025-11-09 13:25:10] ✅ Hechos_Estres_SaludMental: 426815 registros (mínimo: 100)
+[2025-11-09 13:25:10] 
+⚠️ Algunas tablas no cumplen volumetría mínima
+[2025-11-09 13:25:10] 
+==================================================
+[2025-11-09 13:25:10] 3. VALIDACIÓN DE INTEGRIDAD REFERENCIAL
+[2025-11-09 13:25:10] ==================================================
+[2025-11-09 13:25:10] ✅ id_tiempo → Dim_Tiempo: sin registros huérfanos
+[2025-11-09 13:25:10] ✅ id_genero → Dim_Genero: sin registros huérfanos
+[2025-11-09 13:25:10] ✅ id_historial → Dim_Historial: sin registros huérfanos
+[2025-11-09 13:25:10] ✅ id_ocupacion → Dim_Ocupacion: sin registros huérfanos
+[2025-11-09 13:25:10] ✅ id_pais → Dim_Pais: sin registros huérfanos
+[2025-11-09 13:25:10] ✅ id_aislamiento → Dim_Aislamiento: sin registros huérfanos
+[2025-11-09 13:25:10] ✅ id_sintomas → Dim_Sintomas: sin registros huérfanos
+[2025-11-09 13:25:10] ✅ id_acceso → Dim_Acceso: sin registros huérfanos
+[2025-11-09 13:25:10] 
+✅ Integridad referencial correcta
+[2025-11-09 13:25:10] 
+==================================================
+[2025-11-09 13:25:10] 4. VALIDACIÓN DE INDICADORES
+[2025-11-09 13:25:10] ==================================================
+[2025-11-09 13:25:10] 
+Verificando rangos de porcentajes...
+[2025-11-09 13:25:11]   ✅ Todos los porcentajes en rango válido
+[2025-11-09 13:25:11] 
+Verificando conteos...
+[2025-11-09 13:25:12]   ✅ Todos los conteos son no negativos
+[2025-11-09 13:25:12] 
+Verificando consistencia de tratamiento...
+[2025-11-09 13:25:12]   ✅ Porcentajes de tratamiento consistentes
+[2025-11-09 13:25:12] 
+==================================================
+[2025-11-09 13:25:12] 5. VALIDACIÓN DE VARIABLE DERIVADA
+[2025-11-09 13:25:12] ==================================================
+[2025-11-09 13:25:12] ✅ Camino directo (Growing_Stress=Yes) correcto
+[2025-11-09 13:25:12] ✅ Camino inferido funciona: 33 combinaciones inferidas
+[2025-11-09 13:25:12] 
+Distribución del indicador inferido:
+[2025-11-09 13:25:12]   SIN estrés: 138 combinaciones (53.28%)
+[2025-11-09 13:25:12]   CON estrés: 121 combinaciones (46.72%)
+[2025-11-09 13:25:12] 
+==================================================
+[2025-11-09 13:25:12] 6. ESTADÍSTICAS GENERALES DEL DW
+[2025-11-09 13:25:12] ==================================================
+[2025-11-09 13:25:12] 
+Período de análisis: 2014 - 2016
+[2025-11-09 13:25:12] 
+Distribución por género en hechos:
+[2025-11-09 13:25:12]   Male: 334964 hechos
+[2025-11-09 13:25:12]   Female: 91851 hechos
+[2025-11-09 13:25:12] 
+Top 5 países por cantidad de hechos:
+[2025-11-09 13:25:12]   United States: 119853 hechos
+[2025-11-09 13:25:12]   United Kingdom: 78009 hechos
+[2025-11-09 13:25:12]   Canada: 43185 hechos
+[2025-11-09 13:25:12]   Australia: 20784 hechos
+[2025-11-09 13:25:12]   Ireland: 18983 hechos
+[2025-11-09 13:25:12] 
+Indicadores promedio globales:
+[2025-11-09 13:25:12]   % Estrés: 34.91%
+[2025-11-09 13:25:12]   % En tratamiento: 51.12%
+[2025-11-09 13:25:12] 
+==================================================
+[2025-11-09 13:25:12] REPORTE FINAL DE VALIDACIÓN
+[2025-11-09 13:25:12] ==================================================
+[2025-11-09 13:25:12] 
+Resumen de tablas:
+[2025-11-09 13:25:12] Tabla                               Registros    Tamaño (MB)
+[2025-11-09 13:25:12] ------------------------------------------------------------
+[2025-11-09 13:25:12] Hechos_Estres_SaludMental           423627       103.70
+[2025-11-09 13:25:12] mental_health_staging               285570       82.19
+[2025-11-09 13:25:12] Dim_Sintomas                        259          0.05
+[2025-11-09 13:25:12] Dim_Pais                            35           0.05
+[2025-11-09 13:25:12] Dim_Acceso                          18           0.05
+[2025-11-09 13:25:12] Dim_Tiempo                          13           0.06
+[2025-11-09 13:25:12] Dim_Aislamiento                     5            0.05
+[2025-11-09 13:25:12] Dim_Ocupacion                       5            0.03
+[2025-11-09 13:25:12] Dim_Genero                          2            0.03
+[2025-11-09 13:25:12] Dim_Historial                       2            0.03
+[2025-11-09 13:25:12] ------------------------------------------------------------
+[2025-11-09 13:25:12] TOTAL                               709536       186.24
+[2025-11-09 13:25:12] 
+======================================================================
+[2025-11-09 13:25:12] ✅ VALIDACIÓN COMPLETADA EXITOSAMENTE
+[2025-11-09 13:25:12] El Data Warehouse está listo para ser usado en Power BI
+[2025-11-09 13:25:12] ======================================================================
+[2025-11-09 13:25:12] 
+Conexión cerrada
+[2025-11-09 22:01:31] ==================================================
+[2025-11-09 22:01:31] INICIANDO CARGA DE STAGING
+[2025-11-09 22:01:31] ==================================================
+[2025-11-09 22:01:31] Conectando a MySQL...
+[2025-11-09 22:01:31] ✅ Conexión exitosa a MySQL
+[2025-11-09 22:01:31] 
+Verificando tabla mental_health_staging...
+[2025-11-09 22:01:31] ✅ Tabla mental_health_staging existe
+[2025-11-09 22:01:31] 
+Limpiando tabla staging...
+[2025-11-09 22:01:31] ✅ Tabla staging limpiada
+[2025-11-09 22:01:31] 
+Cargando CSV desde: data/processed/mental_health_clean.csv
+[2025-11-09 22:01:31] ✅ CSV cargado: 290051 registros, 17 columnas
+[2025-11-09 22:01:31] 
+Insertando datos en lotes de 1000 registros...
+[2025-11-09 22:01:31]   Procesado: 1000/290051 (0.3%)
+[2025-11-09 22:01:32]   Procesado: 2000/290051 (0.7%)
+[2025-11-09 22:01:32]   Procesado: 3000/290051 (1.0%)
+[2025-11-09 22:01:32]   Procesado: 4000/290051 (1.4%)
+[2025-11-09 22:01:32]   Procesado: 5000/290051 (1.7%)
+[2025-11-09 22:01:32]   Procesado: 6000/290051 (2.1%)
+[2025-11-09 22:01:32]   Procesado: 7000/290051 (2.4%)
+[2025-11-09 22:01:32]   Procesado: 8000/290051 (2.8%)
+[2025-11-09 22:01:32]   Procesado: 9000/290051 (3.1%)
+[2025-11-09 22:01:32]   Procesado: 10000/290051 (3.4%)
+[2025-11-09 22:01:32]   Procesado: 11000/290051 (3.8%)
+[2025-11-09 22:01:32]   Procesado: 12000/290051 (4.1%)
+[2025-11-09 22:01:32]   Procesado: 13000/290051 (4.5%)
+[2025-11-09 22:01:32]   Procesado: 14000/290051 (4.8%)
+[2025-11-09 22:01:32]   Procesado: 15000/290051 (5.2%)
+[2025-11-09 22:01:32]   Procesado: 16000/290051 (5.5%)
+[2025-11-09 22:01:32]   Procesado: 17000/290051 (5.9%)
+[2025-11-09 22:01:32]   Procesado: 18000/290051 (6.2%)
+[2025-11-09 22:01:33]   Procesado: 19000/290051 (6.6%)
+[2025-11-09 22:01:33]   Procesado: 20000/290051 (6.9%)
+[2025-11-09 22:01:33]   Procesado: 21000/290051 (7.2%)
+[2025-11-09 22:01:33]   Procesado: 22000/290051 (7.6%)
+[2025-11-09 22:01:33]   Procesado: 23000/290051 (7.9%)
+[2025-11-09 22:01:33]   Procesado: 24000/290051 (8.3%)
+[2025-11-09 22:01:33]   Procesado: 25000/290051 (8.6%)
+[2025-11-09 22:01:33]   Procesado: 26000/290051 (9.0%)
+[2025-11-09 22:01:33]   Procesado: 27000/290051 (9.3%)
+[2025-11-09 22:01:33]   Procesado: 28000/290051 (9.7%)
+[2025-11-09 22:01:33]   Procesado: 29000/290051 (10.0%)
+[2025-11-09 22:01:33]   Procesado: 30000/290051 (10.3%)
+[2025-11-09 22:01:33]   Procesado: 31000/290051 (10.7%)
+[2025-11-09 22:01:33]   Procesado: 32000/290051 (11.0%)
+[2025-11-09 22:01:33]   Procesado: 33000/290051 (11.4%)
+[2025-11-09 22:01:33]   Procesado: 34000/290051 (11.7%)
+[2025-11-09 22:01:33]   Procesado: 35000/290051 (12.1%)
+[2025-11-09 22:01:33]   Procesado: 36000/290051 (12.4%)
+[2025-11-09 22:01:34]   Procesado: 37000/290051 (12.8%)
+[2025-11-09 22:01:34]   Procesado: 38000/290051 (13.1%)
+[2025-11-09 22:01:34]   Procesado: 39000/290051 (13.4%)
+[2025-11-09 22:01:34]   Procesado: 40000/290051 (13.8%)
+[2025-11-09 22:01:34]   Procesado: 41000/290051 (14.1%)
+[2025-11-09 22:01:34]   Procesado: 42000/290051 (14.5%)
+[2025-11-09 22:01:34]   Procesado: 43000/290051 (14.8%)
+[2025-11-09 22:01:34]   Procesado: 44000/290051 (15.2%)
+[2025-11-09 22:01:34]   Procesado: 45000/290051 (15.5%)
+[2025-11-09 22:01:34]   Procesado: 46000/290051 (15.9%)
+[2025-11-09 22:01:34]   Procesado: 47000/290051 (16.2%)
+[2025-11-09 22:01:34]   Procesado: 48000/290051 (16.5%)
+[2025-11-09 22:01:34]   Procesado: 49000/290051 (16.9%)
+[2025-11-09 22:01:34]   Procesado: 50000/290051 (17.2%)
+[2025-11-09 22:01:34]   Procesado: 51000/290051 (17.6%)
+[2025-11-09 22:01:34]   Procesado: 52000/290051 (17.9%)
+[2025-11-09 22:01:34]   Procesado: 53000/290051 (18.3%)
+[2025-11-09 22:01:34]   Procesado: 54000/290051 (18.6%)
+[2025-11-09 22:01:35]   Procesado: 55000/290051 (19.0%)
+[2025-11-09 22:01:35]   Procesado: 56000/290051 (19.3%)
+[2025-11-09 22:01:35]   Procesado: 57000/290051 (19.7%)
+[2025-11-09 22:01:35]   Procesado: 58000/290051 (20.0%)
+[2025-11-09 22:01:35]   Procesado: 59000/290051 (20.3%)
+[2025-11-09 22:01:35]   Procesado: 60000/290051 (20.7%)
+[2025-11-09 22:01:35]   Procesado: 61000/290051 (21.0%)
+[2025-11-09 22:01:35]   Procesado: 62000/290051 (21.4%)
+[2025-11-09 22:01:35]   Procesado: 63000/290051 (21.7%)
+[2025-11-09 22:01:35]   Procesado: 64000/290051 (22.1%)
+[2025-11-09 22:01:35]   Procesado: 65000/290051 (22.4%)
+[2025-11-09 22:01:35]   Procesado: 66000/290051 (22.8%)
+[2025-11-09 22:01:35]   Procesado: 67000/290051 (23.1%)
+[2025-11-09 22:01:35]   Procesado: 68000/290051 (23.4%)
+[2025-11-09 22:01:35]   Procesado: 69000/290051 (23.8%)
+[2025-11-09 22:01:35]   Procesado: 70000/290051 (24.1%)
+[2025-11-09 22:01:35]   Procesado: 71000/290051 (24.5%)
+[2025-11-09 22:01:35]   Procesado: 72000/290051 (24.8%)
+[2025-11-09 22:01:36]   Procesado: 73000/290051 (25.2%)
+[2025-11-09 22:01:36]   Procesado: 74000/290051 (25.5%)
+[2025-11-09 22:01:36]   Procesado: 75000/290051 (25.9%)
+[2025-11-09 22:01:36]   Procesado: 76000/290051 (26.2%)
+[2025-11-09 22:01:36]   Procesado: 77000/290051 (26.5%)
+[2025-11-09 22:01:36]   Procesado: 78000/290051 (26.9%)
+[2025-11-09 22:01:36]   Procesado: 79000/290051 (27.2%)
+[2025-11-09 22:01:36]   Procesado: 80000/290051 (27.6%)
+[2025-11-09 22:01:36]   Procesado: 81000/290051 (27.9%)
+[2025-11-09 22:01:36]   Procesado: 82000/290051 (28.3%)
+[2025-11-09 22:01:36]   Procesado: 83000/290051 (28.6%)
+[2025-11-09 22:01:36]   Procesado: 84000/290051 (29.0%)
+[2025-11-09 22:01:36]   Procesado: 85000/290051 (29.3%)
+[2025-11-09 22:01:36]   Procesado: 86000/290051 (29.6%)
+[2025-11-09 22:01:36]   Procesado: 87000/290051 (30.0%)
+[2025-11-09 22:01:36]   Procesado: 88000/290051 (30.3%)
+[2025-11-09 22:01:36]   Procesado: 89000/290051 (30.7%)
+[2025-11-09 22:01:37]   Procesado: 90000/290051 (31.0%)
+[2025-11-09 22:01:37]   Procesado: 91000/290051 (31.4%)
+[2025-11-09 22:01:37]   Procesado: 92000/290051 (31.7%)
+[2025-11-09 22:01:37]   Procesado: 93000/290051 (32.1%)
+[2025-11-09 22:01:37]   Procesado: 94000/290051 (32.4%)
+[2025-11-09 22:01:37]   Procesado: 95000/290051 (32.8%)
+[2025-11-09 22:01:37]   Procesado: 96000/290051 (33.1%)
+[2025-11-09 22:01:37]   Procesado: 97000/290051 (33.4%)
+[2025-11-09 22:01:37]   Procesado: 98000/290051 (33.8%)
+[2025-11-09 22:01:37]   Procesado: 99000/290051 (34.1%)
+[2025-11-09 22:01:37]   Procesado: 100000/290051 (34.5%)
+[2025-11-09 22:01:37]   Procesado: 101000/290051 (34.8%)
+[2025-11-09 22:01:37]   Procesado: 102000/290051 (35.2%)
+[2025-11-09 22:01:37]   Procesado: 103000/290051 (35.5%)
+[2025-11-09 22:01:37]   Procesado: 104000/290051 (35.9%)
+[2025-11-09 22:01:37]   Procesado: 105000/290051 (36.2%)
+[2025-11-09 22:01:37]   Procesado: 106000/290051 (36.5%)
+[2025-11-09 22:01:37]   Procesado: 107000/290051 (36.9%)
+[2025-11-09 22:01:38]   Procesado: 108000/290051 (37.2%)
+[2025-11-09 22:01:38]   Procesado: 109000/290051 (37.6%)
+[2025-11-09 22:01:38]   Procesado: 110000/290051 (37.9%)
+[2025-11-09 22:01:38]   Procesado: 111000/290051 (38.3%)
+[2025-11-09 22:01:38]   Procesado: 112000/290051 (38.6%)
+[2025-11-09 22:01:38]   Procesado: 113000/290051 (39.0%)
+[2025-11-09 22:01:38]   Procesado: 114000/290051 (39.3%)
+[2025-11-09 22:01:38]   Procesado: 115000/290051 (39.6%)
+[2025-11-09 22:01:38]   Procesado: 116000/290051 (40.0%)
+[2025-11-09 22:01:38]   Procesado: 117000/290051 (40.3%)
+[2025-11-09 22:01:38]   Procesado: 118000/290051 (40.7%)
+[2025-11-09 22:01:38]   Procesado: 119000/290051 (41.0%)
+[2025-11-09 22:01:38]   Procesado: 120000/290051 (41.4%)
+[2025-11-09 22:01:38]   Procesado: 121000/290051 (41.7%)
+[2025-11-09 22:01:38]   Procesado: 122000/290051 (42.1%)
+[2025-11-09 22:01:38]   Procesado: 123000/290051 (42.4%)
+[2025-11-09 22:01:38]   Procesado: 124000/290051 (42.8%)
+[2025-11-09 22:01:39]   Procesado: 125000/290051 (43.1%)
+[2025-11-09 22:01:39]   Procesado: 126000/290051 (43.4%)
+[2025-11-09 22:01:39]   Procesado: 127000/290051 (43.8%)
+[2025-11-09 22:01:39]   Procesado: 128000/290051 (44.1%)
+[2025-11-09 22:01:39]   Procesado: 129000/290051 (44.5%)
+[2025-11-09 22:01:39]   Procesado: 130000/290051 (44.8%)
+[2025-11-09 22:01:39]   Procesado: 131000/290051 (45.2%)
+[2025-11-09 22:01:39]   Procesado: 132000/290051 (45.5%)
+[2025-11-09 22:01:39]   Procesado: 133000/290051 (45.9%)
+[2025-11-09 22:01:39]   Procesado: 134000/290051 (46.2%)
+[2025-11-09 22:01:39]   Procesado: 135000/290051 (46.5%)
+[2025-11-09 22:01:39]   Procesado: 136000/290051 (46.9%)
+[2025-11-09 22:01:39]   Procesado: 137000/290051 (47.2%)
+[2025-11-09 22:01:39]   Procesado: 138000/290051 (47.6%)
+[2025-11-09 22:01:39]   Procesado: 139000/290051 (47.9%)
+[2025-11-09 22:01:39]   Procesado: 140000/290051 (48.3%)
+[2025-11-09 22:01:39]   Procesado: 141000/290051 (48.6%)
+[2025-11-09 22:01:39]   Procesado: 142000/290051 (49.0%)
+[2025-11-09 22:01:40]   Procesado: 143000/290051 (49.3%)
+[2025-11-09 22:01:40]   Procesado: 144000/290051 (49.6%)
+[2025-11-09 22:01:40]   Procesado: 145000/290051 (50.0%)
+[2025-11-09 22:01:40]   Procesado: 146000/290051 (50.3%)
+[2025-11-09 22:01:40]   Procesado: 147000/290051 (50.7%)
+[2025-11-09 22:01:40]   Procesado: 148000/290051 (51.0%)
+[2025-11-09 22:01:40]   Procesado: 149000/290051 (51.4%)
+[2025-11-09 22:01:40]   Procesado: 150000/290051 (51.7%)
+[2025-11-09 22:01:40]   Procesado: 151000/290051 (52.1%)
+[2025-11-09 22:01:40]   Procesado: 152000/290051 (52.4%)
+[2025-11-09 22:01:40]   Procesado: 153000/290051 (52.7%)
+[2025-11-09 22:01:40]   Procesado: 154000/290051 (53.1%)
+[2025-11-09 22:01:40]   Procesado: 155000/290051 (53.4%)
+[2025-11-09 22:01:40]   Procesado: 156000/290051 (53.8%)
+[2025-11-09 22:01:40]   Procesado: 157000/290051 (54.1%)
+[2025-11-09 22:01:40]   Procesado: 158000/290051 (54.5%)
+[2025-11-09 22:01:40]   Procesado: 159000/290051 (54.8%)
+[2025-11-09 22:01:40]   Procesado: 160000/290051 (55.2%)
+[2025-11-09 22:01:41]   Procesado: 161000/290051 (55.5%)
+[2025-11-09 22:01:41]   Procesado: 162000/290051 (55.9%)
+[2025-11-09 22:01:41]   Procesado: 163000/290051 (56.2%)
+[2025-11-09 22:01:41]   Procesado: 164000/290051 (56.5%)
+[2025-11-09 22:01:41]   Procesado: 165000/290051 (56.9%)
+[2025-11-09 22:01:41]   Procesado: 166000/290051 (57.2%)
+[2025-11-09 22:01:41]   Procesado: 167000/290051 (57.6%)
+[2025-11-09 22:01:41]   Procesado: 168000/290051 (57.9%)
+[2025-11-09 22:01:41]   Procesado: 169000/290051 (58.3%)
+[2025-11-09 22:01:41]   Procesado: 170000/290051 (58.6%)
+[2025-11-09 22:01:41]   Procesado: 171000/290051 (59.0%)
+[2025-11-09 22:01:41]   Procesado: 172000/290051 (59.3%)
+[2025-11-09 22:01:41]   Procesado: 173000/290051 (59.6%)
+[2025-11-09 22:01:41]   Procesado: 174000/290051 (60.0%)
+[2025-11-09 22:01:41]   Procesado: 175000/290051 (60.3%)
+[2025-11-09 22:01:41]   Procesado: 176000/290051 (60.7%)
+[2025-11-09 22:01:41]   Procesado: 177000/290051 (61.0%)
+[2025-11-09 22:01:41]   Procesado: 178000/290051 (61.4%)
+[2025-11-09 22:01:42]   Procesado: 179000/290051 (61.7%)
+[2025-11-09 22:01:42]   Procesado: 180000/290051 (62.1%)
+[2025-11-09 22:01:42]   Procesado: 181000/290051 (62.4%)
+[2025-11-09 22:01:42]   Procesado: 182000/290051 (62.7%)
+[2025-11-09 22:01:42]   Procesado: 183000/290051 (63.1%)
+[2025-11-09 22:01:42]   Procesado: 184000/290051 (63.4%)
+[2025-11-09 22:01:42]   Procesado: 185000/290051 (63.8%)
+[2025-11-09 22:01:42]   Procesado: 186000/290051 (64.1%)
+[2025-11-09 22:01:42]   Procesado: 187000/290051 (64.5%)
+[2025-11-09 22:01:42]   Procesado: 188000/290051 (64.8%)
+[2025-11-09 22:01:42]   Procesado: 189000/290051 (65.2%)
+[2025-11-09 22:01:42]   Procesado: 190000/290051 (65.5%)
+[2025-11-09 22:01:42]   Procesado: 191000/290051 (65.9%)
+[2025-11-09 22:01:42]   Procesado: 192000/290051 (66.2%)
+[2025-11-09 22:01:42]   Procesado: 193000/290051 (66.5%)
+[2025-11-09 22:01:42]   Procesado: 194000/290051 (66.9%)
+[2025-11-09 22:01:42]   Procesado: 195000/290051 (67.2%)
+[2025-11-09 22:01:42]   Procesado: 196000/290051 (67.6%)
+[2025-11-09 22:01:42]   Procesado: 197000/290051 (67.9%)
+[2025-11-09 22:01:43]   Procesado: 198000/290051 (68.3%)
+[2025-11-09 22:01:43]   Procesado: 199000/290051 (68.6%)
+[2025-11-09 22:01:43]   Procesado: 200000/290051 (69.0%)
+[2025-11-09 22:01:43]   Procesado: 201000/290051 (69.3%)
+[2025-11-09 22:01:43]   Procesado: 202000/290051 (69.6%)
+[2025-11-09 22:01:43]   Procesado: 203000/290051 (70.0%)
+[2025-11-09 22:01:43]   Procesado: 204000/290051 (70.3%)
+[2025-11-09 22:01:43]   Procesado: 205000/290051 (70.7%)
+[2025-11-09 22:01:43]   Procesado: 206000/290051 (71.0%)
+[2025-11-09 22:01:43]   Procesado: 207000/290051 (71.4%)
+[2025-11-09 22:01:43]   Procesado: 208000/290051 (71.7%)
+[2025-11-09 22:01:43]   Procesado: 209000/290051 (72.1%)
+[2025-11-09 22:01:43]   Procesado: 210000/290051 (72.4%)
+[2025-11-09 22:01:43]   Procesado: 211000/290051 (72.7%)
+[2025-11-09 22:01:43]   Procesado: 212000/290051 (73.1%)
+[2025-11-09 22:01:43]   Procesado: 213000/290051 (73.4%)
+[2025-11-09 22:01:43]   Procesado: 214000/290051 (73.8%)
+[2025-11-09 22:01:44]   Procesado: 215000/290051 (74.1%)
+[2025-11-09 22:01:44]   Procesado: 216000/290051 (74.5%)
+[2025-11-09 22:01:44]   Procesado: 217000/290051 (74.8%)
+[2025-11-09 22:01:44]   Procesado: 218000/290051 (75.2%)
+[2025-11-09 22:01:44]   Procesado: 219000/290051 (75.5%)
+[2025-11-09 22:01:44]   Procesado: 220000/290051 (75.8%)
+[2025-11-09 22:01:44]   Procesado: 221000/290051 (76.2%)
+[2025-11-09 22:01:44]   Procesado: 222000/290051 (76.5%)
+[2025-11-09 22:01:44]   Procesado: 223000/290051 (76.9%)
+[2025-11-09 22:01:44]   Procesado: 224000/290051 (77.2%)
+[2025-11-09 22:01:44]   Procesado: 225000/290051 (77.6%)
+[2025-11-09 22:01:44]   Procesado: 226000/290051 (77.9%)
+[2025-11-09 22:01:44]   Procesado: 227000/290051 (78.3%)
+[2025-11-09 22:01:44]   Procesado: 228000/290051 (78.6%)
+[2025-11-09 22:01:44]   Procesado: 229000/290051 (79.0%)
+[2025-11-09 22:01:44]   Procesado: 230000/290051 (79.3%)
+[2025-11-09 22:01:44]   Procesado: 231000/290051 (79.6%)
+[2025-11-09 22:01:44]   Procesado: 232000/290051 (80.0%)
+[2025-11-09 22:01:45]   Procesado: 233000/290051 (80.3%)
+[2025-11-09 22:01:45]   Procesado: 234000/290051 (80.7%)
+[2025-11-09 22:01:45]   Procesado: 235000/290051 (81.0%)
+[2025-11-09 22:01:45]   Procesado: 236000/290051 (81.4%)
+[2025-11-09 22:01:45]   Procesado: 237000/290051 (81.7%)
+[2025-11-09 22:01:45]   Procesado: 238000/290051 (82.1%)
+[2025-11-09 22:01:45]   Procesado: 239000/290051 (82.4%)
+[2025-11-09 22:01:45]   Procesado: 240000/290051 (82.7%)
+[2025-11-09 22:01:45]   Procesado: 241000/290051 (83.1%)
+[2025-11-09 22:01:45]   Procesado: 242000/290051 (83.4%)
+[2025-11-09 22:01:45]   Procesado: 243000/290051 (83.8%)
+[2025-11-09 22:01:45]   Procesado: 244000/290051 (84.1%)
+[2025-11-09 22:01:45]   Procesado: 245000/290051 (84.5%)
+[2025-11-09 22:01:45]   Procesado: 246000/290051 (84.8%)
+[2025-11-09 22:01:45]   Procesado: 247000/290051 (85.2%)
+[2025-11-09 22:01:45]   Procesado: 248000/290051 (85.5%)
+[2025-11-09 22:01:45]   Procesado: 249000/290051 (85.8%)
+[2025-11-09 22:01:45]   Procesado: 250000/290051 (86.2%)
+[2025-11-09 22:01:46]   Procesado: 251000/290051 (86.5%)
+[2025-11-09 22:01:46]   Procesado: 252000/290051 (86.9%)
+[2025-11-09 22:01:46]   Procesado: 253000/290051 (87.2%)
+[2025-11-09 22:01:46]   Procesado: 254000/290051 (87.6%)
+[2025-11-09 22:01:46]   Procesado: 255000/290051 (87.9%)
+[2025-11-09 22:01:46]   Procesado: 256000/290051 (88.3%)
+[2025-11-09 22:01:46]   Procesado: 257000/290051 (88.6%)
+[2025-11-09 22:01:46]   Procesado: 258000/290051 (88.9%)
+[2025-11-09 22:01:46]   Procesado: 259000/290051 (89.3%)
+[2025-11-09 22:01:46]   Procesado: 260000/290051 (89.6%)
+[2025-11-09 22:01:46]   Procesado: 261000/290051 (90.0%)
+[2025-11-09 22:01:46]   Procesado: 262000/290051 (90.3%)
+[2025-11-09 22:01:46]   Procesado: 263000/290051 (90.7%)
+[2025-11-09 22:01:46]   Procesado: 264000/290051 (91.0%)
+[2025-11-09 22:01:46]   Procesado: 265000/290051 (91.4%)
+[2025-11-09 22:01:46]   Procesado: 266000/290051 (91.7%)
+[2025-11-09 22:01:46]   Procesado: 267000/290051 (92.1%)
+[2025-11-09 22:01:46]   Procesado: 268000/290051 (92.4%)
+[2025-11-09 22:01:47]   Procesado: 269000/290051 (92.7%)
+[2025-11-09 22:01:47]   Procesado: 270000/290051 (93.1%)
+[2025-11-09 22:01:47]   Procesado: 271000/290051 (93.4%)
+[2025-11-09 22:01:47]   Procesado: 272000/290051 (93.8%)
+[2025-11-09 22:01:47]   Procesado: 273000/290051 (94.1%)
+[2025-11-09 22:01:47]   Procesado: 274000/290051 (94.5%)
+[2025-11-09 22:01:47]   Procesado: 275000/290051 (94.8%)
+[2025-11-09 22:01:47]   Procesado: 276000/290051 (95.2%)
+[2025-11-09 22:01:47]   Procesado: 277000/290051 (95.5%)
+[2025-11-09 22:01:47]   Procesado: 278000/290051 (95.8%)
+[2025-11-09 22:01:47]   Procesado: 279000/290051 (96.2%)
+[2025-11-09 22:01:47]   Procesado: 280000/290051 (96.5%)
+[2025-11-09 22:01:47]   Procesado: 281000/290051 (96.9%)
+[2025-11-09 22:01:47]   Procesado: 282000/290051 (97.2%)
+[2025-11-09 22:01:47]   Procesado: 283000/290051 (97.6%)
+[2025-11-09 22:01:47]   Procesado: 284000/290051 (97.9%)
+[2025-11-09 22:01:47]   Procesado: 285000/290051 (98.3%)
+[2025-11-09 22:01:47]   Procesado: 286000/290051 (98.6%)
+[2025-11-09 22:01:48]   Procesado: 287000/290051 (98.9%)
+[2025-11-09 22:01:48]   Procesado: 288000/290051 (99.3%)
+[2025-11-09 22:01:48]   Procesado: 289000/290051 (99.6%)
+[2025-11-09 22:01:48]   Procesado: 290000/290051 (100.0%)
+[2025-11-09 22:01:48]   Procesado: 290051/290051 (100.0%)
+[2025-11-09 22:01:48] 
+✅ Inserción completada:
+[2025-11-09 22:01:48]   Registros insertados: 290051
+[2025-11-09 22:01:48]   Errores: 0
+[2025-11-09 22:01:48] 
+--- VALIDANDO CARGA ---
+[2025-11-09 22:01:48] Registros en staging: 290051
+[2025-11-09 22:01:48] Registros esperados: 290051
+[2025-11-09 22:01:48] ✅ Cantidad de registros correcta
+[2025-11-09 22:01:48] 
+Verificando campos críticos (no deben tener NULL)...
+[2025-11-09 22:01:48]   ✅ Timestamp: sin valores NULL
+[2025-11-09 22:01:48]   ✅ Gender: sin valores NULL
+[2025-11-09 22:01:48]   ✅ Country: sin valores NULL
+[2025-11-09 22:01:48]   ✅ Occupation: sin valores NULL
+[2025-11-09 22:01:48]   ✅ family_history: sin valores NULL
+[2025-11-09 22:01:48]   ✅ treatment: sin valores NULL
+[2025-11-09 22:01:48]   ✅ Days_Indoors: sin valores NULL
+[2025-11-09 22:01:48]   ✅ Growing_Stress: sin valores NULL
+[2025-11-09 22:01:48]   ✅ Mood_Swings: sin valores NULL
+[2025-11-09 22:01:48]   ✅ Coping_Struggles: sin valores NULL
+[2025-11-09 22:01:48]   ✅ Social_Weakness: sin valores NULL
+[2025-11-09 22:01:48]   ✅ care_options: sin valores NULL
+[2025-11-09 22:01:48]   ✅ mental_health_interview: sin valores NULL
+[2025-11-09 22:01:48] 
+Distribución por género:
+[2025-11-09 22:01:48]   Female: 52151 registros
+[2025-11-09 22:01:48]   Male: 237900 registros
+[2025-11-09 22:01:48] 
+Rango de fechas:
+[2025-11-09 22:01:48]   Desde: 2014-08-27 11:29:00
+[2025-11-09 22:01:48]   Hasta: 2016-02-01 23:04:00
+[2025-11-09 22:01:48] 
+Top 5 países:
+[2025-11-09 22:01:48]   United States: 169112 registros
+[2025-11-09 22:01:48]   United Kingdom: 51356 registros
+[2025-11-09 22:01:48]   Canada: 18699 registros
+[2025-11-09 22:01:48]   Australia: 6014 registros
+[2025-11-09 22:01:48]   Netherlands: 5891 registros
+[2025-11-09 22:01:48] 
+==================================================
+[2025-11-09 22:01:48] CARGA DE STAGING COMPLETADA EXITOSAMENTE
+[2025-11-09 22:01:48] ==================================================
+[2025-11-09 22:01:48] Conexión cerrada
+[2025-11-09 22:05:09] ==================================================
+[2025-11-09 22:05:09] INICIANDO CARGA DE DIMENSIONES
+[2025-11-09 22:05:09] ==================================================
+[2025-11-09 22:05:09] Conectando a MySQL...
+[2025-11-09 22:05:09] ✅ Conexión exitosa
+[2025-11-09 22:05:09] Desactivando verificación de claves foráneas...
+[2025-11-09 22:05:09] ✅ FK checks desactivados
+[2025-11-09 22:05:09] 
+--- CARGANDO DIM_TIEMPO ---
+[2025-11-09 22:05:09] Encontrados 13 períodos únicos
+[2025-11-09 22:05:09] ✅ Dim_Tiempo cargada: 13 registros
+[2025-11-09 22:05:09] 
+--- CARGANDO DIM_GENERO ---
+[2025-11-09 22:05:09] ✅ Dim_Genero cargada: 2 registros
+[2025-11-09 22:05:09] 
+--- CARGANDO DIM_HISTORIAL ---
+[2025-11-09 22:05:09] ✅ Dim_Historial cargada: 2 registros
+[2025-11-09 22:05:09] 
+--- CARGANDO DIM_OCUPACION ---
+[2025-11-09 22:05:09] ✅ Dim_Ocupacion cargada: 5 registros
+[2025-11-09 22:05:09] 
+--- CARGANDO DIM_PAIS ---
+[2025-11-09 22:05:09] ✅ Dim_Pais cargada: 35 registros
+[2025-11-09 22:05:09] 
+--- CARGANDO DIM_AISLAMIENTO ---
+[2025-11-09 22:05:09] ✅ Dim_Aislamiento cargada: 5 registros
+[2025-11-09 22:05:09] 
+--- CARGANDO DIM_SINTOMAS ---
+[2025-11-09 22:05:09] Encontradas 259 combinaciones únicas de síntomas
+[2025-11-09 22:05:10] ✅ Dim_Sintomas cargada: 259 registros
+[2025-11-09 22:05:10]   Distribución del indicador_inferido_estres:
+[2025-11-09 22:05:10]     0: 138 combinaciones
+[2025-11-09 22:05:10]     1: 121 combinaciones
+[2025-11-09 22:05:10] 
+--- CARGANDO DIM_ACCESO ---
+[2025-11-09 22:05:10] Encontradas 9 combinaciones únicas de acceso
+[2025-11-09 22:05:10] ✅ Dim_Acceso cargada: 9 registros
+[2025-11-09 22:05:10] 
+Reactivando verificación de claves foráneas...
+[2025-11-09 22:05:10] ✅ FK checks reactivados
+[2025-11-09 22:05:10] 
+==================================================
+[2025-11-09 22:05:10] VALIDACIÓN DE DIMENSIONES
+[2025-11-09 22:05:10] ==================================================
+[2025-11-09 22:05:10] ✅ Dim_Tiempo: 13 registros
+[2025-11-09 22:05:10] ✅ Dim_Genero: 2 registros
+[2025-11-09 22:05:10] ✅ Dim_Historial: 2 registros
+[2025-11-09 22:05:10] ✅ Dim_Ocupacion: 5 registros
+[2025-11-09 22:05:10] ✅ Dim_Pais: 35 registros
+[2025-11-09 22:05:10] ✅ Dim_Aislamiento: 5 registros
+[2025-11-09 22:05:10] ✅ Dim_Sintomas: 259 registros
+[2025-11-09 22:05:10] ✅ Dim_Acceso: 9 registros
+[2025-11-09 22:05:10] 
+==================================================
+[2025-11-09 22:05:10] DIMENSIONES CARGADAS EXITOSAMENTE
+[2025-11-09 22:05:10] ==================================================
+[2025-11-09 22:05:10] Conexión cerrada
+[2025-11-09 22:06:35] ==================================================
+[2025-11-09 22:06:35] INICIANDO CARGA DE TABLA DE HECHOS
+[2025-11-09 22:06:35] ==================================================
+[2025-11-09 22:06:35] Conectando a MySQL...
+[2025-11-09 22:06:35] ✅ Conexión exitosa
+[2025-11-09 22:06:35] 
+--- VERIFICANDO DIMENSIONES ---
+[2025-11-09 22:06:35] ✅ Dim_Tiempo: 13 registros
+[2025-11-09 22:06:35] ✅ Dim_Genero: 2 registros
+[2025-11-09 22:06:35] ✅ Dim_Historial: 2 registros
+[2025-11-09 22:06:35] ✅ Dim_Ocupacion: 5 registros
+[2025-11-09 22:06:35] ✅ Dim_Pais: 35 registros
+[2025-11-09 22:06:35] ✅ Dim_Aislamiento: 5 registros
+[2025-11-09 22:06:35] ✅ Dim_Sintomas: 259 registros
+[2025-11-09 22:06:35] ✅ Dim_Acceso: 9 registros
+[2025-11-09 22:06:35] ✅ Todas las dimensiones verificadas
+[2025-11-09 22:06:35] 
+Limpiando tabla de hechos...
+[2025-11-09 22:06:35] ✅ Tabla de hechos limpiada
+[2025-11-09 22:06:35] 
+--- CARGANDO TABLA DE HECHOS ---
+[2025-11-09 22:06:35] Esto puede tomar varios minutos...
+[2025-11-09 22:06:35] Ejecutando query de agregación...
+[2025-11-09 22:07:29] ✅ Tabla de hechos cargada: 350699 registros agregados
+[2025-11-09 22:07:29] 
+--- VALIDANDO TABLA DE HECHOS ---
+[2025-11-09 22:07:29] Total de hechos: 350699
+[2025-11-09 22:07:29] 
+Verificando integridad referencial...
+[2025-11-09 22:07:29]   ✅ id_tiempo: sin huérfanos
+[2025-11-09 22:07:30]   ✅ id_genero: sin huérfanos
+[2025-11-09 22:07:30]   ✅ id_historial: sin huérfanos
+[2025-11-09 22:07:30]   ✅ id_ocupacion: sin huérfanos
+[2025-11-09 22:07:30]   ✅ id_pais: sin huérfanos
+[2025-11-09 22:07:30]   ✅ id_aislamiento: sin huérfanos
+[2025-11-09 22:07:30]   ✅ id_sintomas: sin huérfanos
+[2025-11-09 22:07:30]   ✅ id_acceso: sin huérfanos
+[2025-11-09 22:07:30] 
+Verificando rangos de indicadores...
+[2025-11-09 22:07:31] 
+Muestra de hechos (primeros 3 registros):
+[2025-11-09 22:07:31]   Hecho 1: tiempo=1, genero=1, pais=1, cant_estres=25, pct_estres=100.00, cant_trat=14
+[2025-11-09 22:07:31]   Hecho 2: tiempo=1, genero=1, pais=1, cant_estres=33, pct_estres=100.00, cant_trat=21
+[2025-11-09 22:07:31]   Hecho 3: tiempo=1, genero=1, pais=1, cant_estres=43, pct_estres=100.00, cant_trat=34
+[2025-11-09 22:07:31] 
+Distribución de hechos por género:
+[2025-11-09 22:07:31]   Female: 73841 hechos
+[2025-11-09 22:07:31]   Male: 276858 hechos
+[2025-11-09 22:07:31] 
+==================================================
+[2025-11-09 22:07:31] TABLA DE HECHOS CARGADA EXITOSAMENTE
+[2025-11-09 22:07:31] ==================================================
+[2025-11-09 22:07:31] Conexión cerrada
